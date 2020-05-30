@@ -1,0 +1,24 @@
+#!/bin/bash
+# author:devb@bolinz.com
+# os: centos_7
+# version: 0.1.0
+
+source /etc/os-release
+
+function centos_install(){
+# update package
+yum update -y
+
+# install docker-ce
+}
+
+function manjaro_install(){
+    echo "install docker at manjaro"
+}
+
+if [ "function" = $(type -t ${ID}_install) ];then 
+    ${ID}_install
+else
+    echo "No function for ${ID}"
+fi
+
